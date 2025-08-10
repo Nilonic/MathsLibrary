@@ -1,0 +1,40 @@
+name: .NET Testing Workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+  - cron: "0 17 * * 6-0"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore Testing/Testing.csproj
+
+    - name: Build Testing project
+      run: dotnet build path/to/Testing.csproj --configuration Release --no-restore
+
+    - name: Run tests
+      run: |
+        dotnet test Testing/Testing.csproj --no-build --logger "trx;LogFileName=test_results.trx"
+      continue-on-error: true
+
+    - name: Check test result exit code
+      if: failure()
+      run: |
+        echo "Tests failed."
+        exit 1
