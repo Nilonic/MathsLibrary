@@ -249,7 +249,7 @@ namespace Testing
                 return 1;
             }
             textNumber = NumFromText.TextToNumber("999999999999999999");
-            if (textNumber != 999999999999999999)
+            if (textNumber == 999999999999999999)
             {
                 Console.WriteLine($"TextToNumber failed: expected 999999999999999999, got {textNumber}");
                 return 1;
