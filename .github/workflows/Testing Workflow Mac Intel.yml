@@ -1,4 +1,4 @@
-name: .NET Testing Workflow
+name: .NET Testing Workflow (Mac Intel)
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: macos-13
 
     steps:
     - name: Checkout repository
