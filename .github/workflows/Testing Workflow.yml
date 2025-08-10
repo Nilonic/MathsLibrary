@@ -26,13 +26,5 @@ jobs:
     - name: Build Testing project
       run: dotnet build Testing/Testing.csproj --configuration Release --no-restore
 
-    - name: Run tests
-      run: |
-        dotnet test Testing/Testing.csproj --no-build --logger "trx;LogFileName=test_results.trx"
-      continue-on-error: true
-
-    - name: Check test result exit code
-      if: failure()
-      run: |
-        echo "Tests failed."
-        exit 1
+    - name: Run Tests
+      run: dotnet run --project Testing/Testing.csproj --configuration Release
