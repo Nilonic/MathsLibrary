@@ -11,7 +11,7 @@ If you need to convert, let's say, "Fourty Two Thousand and Fifty Five" to an in
 The main exception we throw is `ArgumentException`.
 
 ## To Use
-For the moment, the best way to use this is to download the repo, and add MathsLibrary as a Project Dependency. We will eventually release a library, once i get the workflow up and working
+For the moment, the best way to use this is to download the repo, and add MathsLibrary as a Project Dependency. We will eventually release a library, once i get the workflow up and working, but updates will be on success of all workflows
 
 ## Contribution
-If you wish to contribute to MathsLibrary, please extend and run the Testing file before submitting. If you don't, it makes it harder to ensure that everything works. When pushing, it'll test on `ubuntu-latest`, ` 	windows-latest`, `ubuntu-24.04-arm`, `windows-11-arm`, `macos-13`, and `macos-latest` using the `Standard GitHub-hosted runners for public repositories`. We will only accept forks/pull requests that pass all these tests
+If you wish to contribute to MathsLibrary, please extend and run the Testing file before submitting. If you don't, it makes it harder to ensure that everything works. When pushing, it'll test on `ubuntu-latest`, `windows-latest`, `ubuntu-24.04-arm`, `windows-11-arm`, `macos-13`, and `macos-latest` using the `Standard GitHub-hosted runners for public repositories`. We will only accept forks/pull requests that pass all these tests
